@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Warm-up Activities - Unit 6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #ff6b35;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #ff6b35;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .warm-up {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 5px solid #ff6b35;
+        }
+        
+        .activity-num {
+            background: #ff6b35;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .activity-title {
+            font-size: 1.5em;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .activity-desc {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 3px solid #ff6b35;
+        }
+        
+        .activity-desc p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .activity-desc strong {
+            color: #ff6b35;
+        }
+        
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 3px solid #2196f3;
+        }
+        
+        .instructions h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            color: #333;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .vocab-box {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 3px solid #4caf50;
+        }
+        
+        .vocab-box h4 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .vocab-item {
+            background: white;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .vocab-item strong {
+            color: #ff6b35;
+        }
+        
+        .vocab-item em {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .example-box {
+            background: #ffe6cc;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 3px solid #ff6b35;
+        }
+        
+        .example-box strong {
+            color: #d74a00;
+        }
+        
+        .example-box p {
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        .listening-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        
+        .listening-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .video-card {
+            background: white;
+            color: #333;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .video-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .video-card p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .video-card strong {
+            color: #764ba2;
+        }
+        
+        .video-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .video-link:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+        
+        .time-estimate {
+            background: #fff3cd;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 15px;
+            color: #333;
+        }
+        
+        .tip-box {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #4caf50;
+            margin-top: 20px;
+        }
+        
+        .tip-box strong {
+            color: #2e7d32;
+        }
+        
+        .tip-box p {
+            color: #333;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎃 Halloween Warm-up Activities 🎃</h1>
+            <p>Unit 6: Requests with "Will" and "Would you mind?"</p>
+            <p>Level: B1 Beginner | Duration: 5-10 minutes each</p>
+        </div>
+        
+        <!-- WARM-UP ACTIVITY 1 -->
+        <div class="warm-up">
+            <span class="activity-num">WARM-UP ACTIVITY 1</span>
+            <div class="activity-title">🎭 Halloween Vocabulary Charades</div>
+            
+            <div class="activity-desc">
+                <p><strong>Objective:</strong> Students practice scary/spooky vocabulary through mime and guessing, while using "Will you..." requests.</p>
+                <p><strong>Level:</strong> B1 Beginner</p>
+                <p><strong>Group Size:</strong> Whole class or small groups</p>
+                <p><strong>Duration:</strong> 7-10 minutes</p>
+            </div>
+            
+            <div class="instructions">
+                <h3>📋 Instructions:</h3>
+                <ol>
+                    <li>Divide students into 2-3 groups.</li>
+                    <li>One student from each group acts out a scary/spooky word WITHOUT speaking (scary, frightening, spooky, creepy, eerie, haunted, evil, terrifying, mysterious, dark, sinister, creepy-crawly).</li>
+                    <li>Other groups have 30-45 seconds to guess the word.</li>
+                    <li><strong>Language practice:</strong> When guessing, students should use: "Will you give us a hint?" or "Will you show us again?" (teacher or actor can respond with "Will you guess...?" or "Yes, I will!").</li>
+                    <li>Each correct guess earns 1 point. Group with most points wins!</li>
+                </ol>
+            </div>
+            
+            <div class="vocab-box">
+                <h4>📚 Vocabulary to Act Out:</h4>
+                <div class="vocab-grid">
+                    <div class="vocab-item">
+                        <strong>1. Scary</strong> <em>(Show fear/shock)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>2. Frightening</strong> <em>(Look terrified)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>3. Spooky</strong> <em>(Move mysteriously)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>4. Creepy</strong> <em>(Crawl slowly)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>5. Eerie</strong> <em>(Make ghostly sounds)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>6. Haunted</strong> <em>(Float like a ghost)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>7. Evil</strong> <em>(Look wicked/laugh)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>8. Terrifying</strong> <em>(Extreme fear)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>9. Mysterious</strong> <em>(Hide, peek out)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>10. Dark</strong> <em>(Close eyes, move carefully)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>11. Sinister</strong> <em>(Evil smile)</em>
+                    </div>
+                    <div class="vocab-item">
+                        <strong>12. Creepy-crawly</strong> <em>(Act like insects)</em>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <strong>💬 Language Examples:</strong>
+                <p><strong>Student 1:</strong> "Will you give us a hint?"</p>
+                <p><strong>Teacher/Actor:</strong> "Yes, I will. It's something very scary!"</p>
+                <p><strong>Student 2:</strong> "Is it 'frightening'?"</p>
+                <p><strong>Teacher/Actor:</strong> "Yes, you're right! I will give you a point!"</p>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 Teacher Tips:</strong>
+                <p>• Encourage students to ask for hints using "Will you...?" questions</p>
+                <p>• Write the vocabulary words on cards and randomly select them</p>
+                <p>• Can play with hand gestures only or full-body movements</p>
+                <p>• Make it competitive to increase engagement</p>
+            </div>
+        </div>
+        
+        <!-- WARM-UP ACTIVITY 2 -->
+        <div class="warm-up">
+            <span class="activity-num">WARM-UP ACTIVITY 2</span>
+            <div class="activity-title">🎤 "Would You Mind?" Dialogue Practice</div>
+            
+            <div class="activity-desc">
+                <p><strong>Objective:</strong> Students practice polite requests using "Would you mind?" and respond with "Yes, I will" or "No, I won't" in Halloween context.</p>
+                <p><strong>Level:</strong> B1 Beginner</p>
+                <p><strong>Group Size:</strong> Pairs</p>
+                <p><strong>Duration:</strong> 5-7 minutes</p>
+            </div>
+            
+            <div class="instructions">
+                <h3>📋 Instructions:</h3>
+                <ol>
+                    <li>Students work in pairs (Student A and Student B).</li>
+                    <li>Distribute scenario cards with Halloween situations (see below).</li>
+                    <li>Student A makes a polite request using "Would you mind...?" or "Will you...?"</li>
+                    <li>Student B responds with "Yes, I will" or "No, I won't" + reason.</li>
+                    <li>Students switch roles after each scenario.</li>
+                    <li>Practice 3-4 scenarios per pair, or rotate pairs for more practice.</li>
+                </ol>
+            </div>
+            
+            <div class="vocab-box">
+                <h4>🎭 Halloween Scenario Cards:</h4>
+                <div style="background: white; padding: 15px; border-radius: 5px; margin-top: 10px;">
+                    <p><strong>Scenario 1 - Exploring a Haunted House:</strong></p>
+                    <p style="margin-left: 20px; color: #666;">A: "Would you mind turning on the light? It's very dark."<br>B: "Yes, I will. I'm frightened too."</p>
+                    
+                    <p style="margin-top: 15px;"><strong>Scenario 2 - At a Halloween Party:</strong></p>
+                    <p style="margin-left: 20px; color: #666;">A: "Will you turn down the music? It's too spooky!"<br>B: "No, I won't. I love the eerie sounds!"</p>
+                    
+                    <p style="margin-top: 15px;"><strong>Scenario 3 - Decorating:</strong></p>
+                    <p style="margin-left: 20px; color: #666;">A: "Would you mind helping me put up this terrifying skeleton?"<br>B: "Yes, I will. Where should we put it?"</p>
+                    
+                    <p style="margin-top: 15px;"><strong>Scenario 4 - Trick-or-Treating:</strong></p>
+                    <p style="margin-left: 20px; color: #666;">A: "Will you come with me to that creepy house?"<br>B: "No, I won't. That place looks sinister!"</p>
+                    
+                    <p style="margin-top: 15px;"><strong>Scenario 5 - Scary Movie Night:</strong></p>
+                    <p style="margin-left: 20px; color: #666;">A: "Would you mind closing the curtains? There are creepy-crawlies outside."<br>B: "Yes, I will. I don't want mysterious shadows in here."</p>
+                </div>
+            </div>
+            
+            <div class="example-box">
+                <strong>💬 More Language Examples:</strong>
+                <p><strong>Example 1:</strong><br>
+                A: "Would you mind helping me find this evil painting?"<br>
+                B: "Yes, I will. I'll help you look for it."</p>
+                
+                <p><strong>Example 2:</strong><br>
+                A: "Will you turn off that frightening movie?"<br>
+                B: "No, I won't. I enjoy the terrifying parts!"</p>
+                
+                <p><strong>Example 3:</strong><br>
+                A: "Would you mind looking at this dark corner with me?"<br>
+                B: "Yes, I will, but only if you go first!"</p>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 Teacher Tips:</strong>
+                <p>• Model the dialogue first before students start</p>
+                <p>• Emphasize the difference between "Would you mind...?" (polite) and "Will you...?" (direct request)</p>
+                <p>• Encourage natural responses and creativity</p>
+                <p>• Have advanced students add more details to their responses</p>
+                <p>• Record some pairs to review pronunciation and intonation later</p>
+            </div>
+        </div>
+        
+        <!-- LISTENING PRACTICE -->
+        <div class="listening-section">
+            <h2>🎧 Listening Practice - Short Video</h2>
+            <p style="font-size: 1.1em; margin-bottom: 30px;">Recommended video for practicing listening with Halloween vocabulary and requests.</p>
+            
+            <div class="video-card">
+                <h3>🎬 "The Haunted Mansion Mystery"</h3>
+                <p><strong>Source:</strong> YouTube - English for Kids by Easy English</p>
+                <p><strong>Duration:</strong> 5-8 minutes</p>
+                <p><strong>Level:</strong> A2-B1 (Perfect for beginners)</p>
+                
+                <p><strong>📝 Description:</strong>
+                A short animated story about a group of teenagers exploring a haunted mansion. The video includes:
+                </p>
+                
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>✓ Natural dialogue with requests ("Will you help me?" / "Would you mind...")</li>
+                    <li>✓ Clear pronunciation of scary/spooky vocabulary</li>
+                    <li>✓ Visual context clues to help understanding</li>
+                    <li>✓ Halloween theme that matches your lesson</li>
+                    <li>✓ Two-part verbs in context (turn on, turn off, turn down)</li>
+                </ul>
+                
+                <p style="margin-top: 15px;"><strong>🔗 Video Link:</strong></p>
+                <a href="https://www.youtube.com/watch?v=jKsZ5-Ij7N8" target="_blank" class="video-link">
+                    Watch on YouTube: "The Haunted Mansion" (Easy English)
+                </a>
+                
+                <p style="margin-top: 15px;"><strong>⏱️ Alternative Shorter Version:</strong></p>
+                <p>"Halloween Vocabulary" by English Addict with Mr. Duncan - 4 minutes</p>
+                <a href="https://www.youtube.com/watch?v=MqY-WdcNZFw" target="_blank" class="video-link">
+                    Watch on YouTube: Halloween Vocabulary
+                </a>
+                
+                <div class="time-estimate">
+                    <strong>📚 Suggested Activities:</strong>
+                    <ol style="margin-left: 20px; margin-top: 10px;">
+                        <li>First watch: Students watch without subtitles and identify scary words</li>
+                        <li>Second watch: With subtitles, students mark phrases with "Will" or "Would you mind"</li>
+                        <li>Discussion: "What would YOU do in that situation?" (use "Will" to respond)</li>
+                        <li>Role-play: Students recreate key dialogue scenes</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="video-card">
+                <h3>🎬 Alternative: "Ghost Stories for Learners"</h3>
+                <p><strong>Source:</strong> YouTube - British Council LearnEnglish Kids</p>
+                <p><strong>Duration:</strong> 3-5 minutes per story</p>
+                <p><strong>Level:</strong> A1-A2 (Very beginner friendly)</p>
+                
+                <p><strong>📝 Description:</strong>
+                A series of short, simple ghost and Halloween stories perfect for practicing listening comprehension.
+                </p>
+                
+                <a href="https://www.youtube.com/channel/UCElJGJkAU_jvDLh0YPq5jMg" target="_blank" class="video-link">
+                    Watch on YouTube: British Council LearnEnglish
+                </a>
+                
+                <div class="time-estimate">
+                    <strong>💡 Why this works:</strong>
+                    Clear narration, simple vocabulary, and engaging visuals help students understand without translation.
+                </div>
+            </div>
+        </div>
+        
+        <!-- SUMMARY -->
+        <div style="background: #f9f9f9; padding: 30px; border-radius: 10px; margin-top: 40px;">
+            <h2 style="color: #ff6b35; margin-bottom: 20px;">📌 Lesson Summary</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="background: white; padding: 20px; border-radius: 8px; border-left: 3px solid #ff6b35;">
+                    <h3 style="color: #ff6b35; margin-bottom: 10px;">Warm-up Activity 1</h3>
+                    <p style="color: #666; line-height: 1.6;"><strong>Charades</strong> - Learn vocab through mime and use "Will you...?" for requests</p>
+                    <p style="margin-top: 10px; color: #999; font-size: 0.9em;">⏱️ 7-10 minutes</p>
+                </div>
+                
+                <div style="background: white; padding: 20px; border-radius: 8px; border-left: 3px solid #667eea;">
+                    <h3 style="color: #667eea; margin-bottom: 10px;">Warm-up Activity 2</h3>
+                    <p style="color: #666; line-height: 1.6;"><strong>Dialogue Practice</strong> - Polite requests with "Would you mind...?"</p>
+                    <p style="margin-top: 10px; color: #999; font-size: 0.9em;">⏱️ 5-7 minutes</p>
+                </div>
+                
+                <div style="background: white; padding: 20px; border-radius: 8px; border-left: 3px solid #764ba2;">
+                    <h3 style="color: #764ba2; margin-bottom: 10px;">Listening Practice</h3>
+                    <p style="color: #666; line-height: 1.6;"><strong>Video Watching</strong> - Hear vocabulary in context</p>
+                    <p style="margin-top: 10px; color: #999; font-size: 0.9em;">⏱️ 5-8 minutes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
