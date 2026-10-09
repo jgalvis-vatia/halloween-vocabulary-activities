@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Unit 6 - Reading Activity B1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #ff6b35;
+            padding-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #ff6b35;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .unit-info {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .unit-info p {
+            color: #333;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+        
+        .unit-info strong {
+            color: #ff6b35;
+        }
+        
+        .reading-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            background: #1a1a2e;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .reading-text {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            line-height: 1.8;
+            border-left: 4px solid #ff6b35;
+            margin-bottom: 20px;
+        }
+        
+        .reading-text p {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1em;
+        }
+        
+        .vocab-highlight {
+            background: #ffe6cc;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+            color: #d74a00;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .vocab-highlight:hover {
+            background: #ff6b35;
+            color: white;
+        }
+        
+        .activity {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .activity-title {
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .question {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #ff6b35;
+        }
+        
+        .question p {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .option:hover {
+            background: #ffe6cc;
+        }
+        
+        .option input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .option label {
+            cursor: pointer;
+            flex: 1;
+        }
+        
+        .vocab-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 400px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-content h3 {
+            color: #ff6b35;
+            margin-bottom: 10px;
+        }
+        
+        .modal-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .close-btn {
+            background: #ff6b35;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        .close-btn:hover {
+            background: #d74a00;
+        }
+        
+        .answer-key {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .answer-key h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+        
+        .answer-item {
+            padding: 8px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .answer-item strong {
+            color: #2e7d32;
+        }
+        
+        .tip-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            margin-top: 20px;
+        }
+        
+        .tip-box strong {
+            color: #1976d2;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎃 Halloween Reading Activity - B1 Beginner 🎃</h1>
+            <p style="color: #666; margin-top: 10px;">Unit 6: "Will" to respond to requests & Two-part verbs</p>
+        </div>
+        
+        <div class="unit-info">
+            <p><strong>UNIT FOCUS:</strong></p>
+            <p>✓ Using "Will" to respond to requests and requests ("Will you help me?")</p>
+            <p>✓ Two-part verbs for making and answering requests</p>
+            <p>✓ Modals: "Would you mind?" / "Turn it down, please!"</p>
+            <p>✓ <strong>Vocabulary Focus:</strong> Scary/Spooky Words (scary, frightening, spooky, creepy, eerie, haunted, evil, terrifying, mysterious, dark, sinister, creepy-crawly)</p>
+        </div>
+        
+        <!-- READING ACTIVITY -->
+        <div class="reading-section">
+            <div class="section-title">📖 Reading Activity: "The Mysterious Mansion"</div>
+            
+            <div class="reading-text">
+                <p>
+                    Last Halloween, Maria and her friends decided to explore an old house on the edge of town. The local people said it was <span class="vocab-highlight" onclick="showVocab('haunted', 'Haunted means a place where ghosts are believed to live')">haunted</span>, and many <span class="vocab-highlight" onclick="showVocab('spooky', 'Spooky means causing fear or a feeling of mystery')">spooky</span> stories were told about it.
+                </p>
+                
+                <p>
+                    When they arrived at the gate, Maria said to her friend Tom, "Will you come with me to the front door?" Tom looked at the <span class="vocab-highlight" onclick="showVocab('dark', 'Dark means having little or no light; black or grey in color')">dark</span> building and replied, "Yes, I will, but would you mind turning on your flashlight? It's very <span class="vocab-highlight" onclick="showVocab('eerie', 'Eerie means strange and frightening; mysterious')">eerie</span> here."
+                </p>
+                
+                <p>
+                    Inside, they saw <span class="vocab-highlight" onclick="showVocab('creepy', 'Creepy means causing an uncomfortable feeling of fear or unease')">creepy</span> shadows on the walls and heard strange sounds. "Will you turn on the lights?" asked Maria nervously. Her friend Sarah responded, "The switches are <span class="vocab-highlight" onclick="showVocab('sinister', 'Sinister means evil or wicked; suggesting harm or danger')">sinister</span>-looking and covered in <span class="vocab-highlight" onclick="showVocab('creepy-crawly', 'Creepy-crawly refers to small insects that crawl, which people often find frightening')">creepy-crawly</span> insects!"
+                </p>
+                
+                <p>
+                    As they explored, they discovered a locked door. "Would you mind helping me open this door?" Maria asked. Tom said he would, but he was also <span class="vocab-highlight" onclick="showVocab('frightened', 'Frightened means feeling sudden fear or shock')">frightened</span>. Finally, they found a collection of old paintings with <span class="vocab-highlight" onclick="showVocab('terrifying', 'Terrifying means extremely frightening or scary')">terrifying</span> faces and <span class="vocab-highlight" onclick="showVocab('evil', 'Evil means morally bad or wicked')">evil</span> expressions. It was the most <span class="vocab-highlight" onclick="showVocab('scary', 'Scary means causing fear or fright')">scary</span> moment of their adventure!
+                </p>
+                
+                <p>
+                    But when they turned on their flashlights properly, they realized the paintings were just old art. "Will you forgive us for being so <span class="vocab-highlight" onclick="showVocab('mysterious', 'Mysterious means difficult to understand or explain; full of mystery')">mysterious</span> discoveries?" laughed Maria. The friends will definitely turn down any future invitations to haunted mansions!
+                </p>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 Language Focus:</strong>
+                <p>Notice how the characters use "Will you...?" and "Would you mind...?" to make requests. Also observe the two-part verbs like "turn on," "turn off," and "turn down" used in context.</p>
+            </div>
+        </div>
+        
+        <!-- COMPREHENSION ACTIVITY -->
+        <div class="reading-section">
+            <div class="section-title">✅ Comprehension Activity: Multiple Choice</div>
+            
+            <div class="activity">
+                <div class="activity-title">Read the questions and select the correct answer:</div>
+                
+                <div class="question">
+                    <p><strong>1. Why did Maria and her friends want to explore the old house?</strong></p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q1a" name="q1">
+                            <label for="q1a">a) It was their school assignment</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1b" name="q1">
+                            <label for="q1b">b) Because it was last Halloween and people said it was haunted</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q1c" name="q1">
+                            <label for="q1c">c) They wanted to buy the house</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p><strong>2. What did Tom ask Maria to do?</strong></p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q2a" name="q2">
+                            <label for="q2a">a) Turn off her flashlight</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2b" name="q2">
+                            <label for="q2b">b) Turn on her flashlight (using "Would you mind...?")</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q2c" name="q2">
+                            <label for="q2c">c) Leave the house immediately</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p><strong>3. What did the friends find that scared them the most?</strong></p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q3a" name="q3">
+                            <label for="q3a">a) A ghost in the main room</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q3b" name="q3">
+                            <label for="q3b">b) Creepy-crawly insects on the door switches</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q3c" name="q3">
+                            <label for="q3c">c) Old paintings with terrifying and evil faces</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p><strong>4. How did the story end?</strong></p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q4a" name="q4">
+                            <label for="q4a">a) They found real treasure</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q4b" name="q4">
+                            <label for="q4b">b) They realized the scary things were just old art</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q4c" name="q4">
+                            <label for="q4c">c) They got trapped in the house</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p><strong>5. Which phrase shows a polite request?</strong></p>
+                    <div class="options">
+                        <div class="option">
+                            <input type="radio" id="q5a" name="q5">
+                            <label for="q5a">a) "Turn on the lights!"</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q5b" name="q5">
+                            <label for="q5b">b) "Would you mind helping me open this door?"</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="q5c" name="q5">
+                            <label for="q5c">c) "Turn it down, please!"</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- VOCABULARY MATCHING -->
+        <div class="reading-section">
+            <div class="section-title">📚 Vocabulary Matching Activity</div>
+            
+            <div class="activity">
+                <div class="activity-title">Match the words with their meanings:</div>
+                
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="background: #f0f0f0;">
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Word</th>
+                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Definition</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Eerie</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Extremely frightening or scary</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Sinister</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Strange and frightening; mysterious</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Creepy</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Causing an uncomfortable feeling of fear</td>
+                    </tr>
+                    <tr style="background: #f9f9f9;">
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Terrifying</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Evil or wicked; suggesting harm or danger</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Spooky</strong></td>
+                        <td style="padding: 12px; border: 1px solid #ddd;">Causing fear or a feeling of mystery</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- ANSWER KEY -->
+        <div class="answer-key">
+            <h3>📋 Answer Key (for Teachers)</h3>
+            <div class="answer-item"><strong>Question 1:</strong> b) Because it was last Halloween and people said it was haunted</div>
+            <div class="answer-item"><strong>Question 2:</strong> b) Turn on her flashlight (using "Would you mind...?")</div>
+            <div class="answer-item"><strong>Question 3:</strong> c) Old paintings with terrifying and evil faces</div>
+            <div class="answer-item"><strong>Question 4:</strong> b) They realized the scary things were just old art</div>
+            <div class="answer-item"><strong>Question 5:</strong> b) "Would you mind helping me open this door?"</div>
+            
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #4caf50;">
+                <strong>Vocabulary Matching Answers:</strong>
+                <div class="answer-item">Eerie → Strange and frightening; mysterious</div>
+                <div class="answer-item">Sinister → Evil or wicked; suggesting harm or danger</div>
+                <div class="answer-item">Creepy → Causing an uncomfortable feeling of fear</div>
+                <div class="answer-item">Terrifying → Extremely frightening or scary</div>
+                <div class="answer-item">Spooky → Causing fear or a feeling of mystery</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- VOCABULARY MODAL -->
+    <div id="vocabModal" class="vocab-modal">
+        <div class="modal-content">
+            <h3 id="modalWord"></h3>
+            <p id="modalDef"></p>
+            <button class="close-btn" onclick="closeVocab()">Got it! ✓</button>
+        </div>
+    </div>
+    
+    <script>
+        function showVocab(word, definition) {
+            document.getElementById('modalWord').textContent = word.toUpperCase();
+            document.getElementById('modalDef').textContent = definition;
+            document.getElementById('vocabModal').style.display = 'flex';
+        }
+        
+        function closeVocab() {
+            document.getElementById('vocabModal').style.display = 'none';
+        }
+        
+        window.onclick = function(event) {
+            const modal = document.getElementById('vocabModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
