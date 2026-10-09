@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Hidden Pictures</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #ff6b35;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        .main-image {
+            position: relative;
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            border-left: 4px solid #ff6b35;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .instructions h3 {
+            color: #ff6b35;
+            margin-bottom: 10px;
+        }
+        
+        .instructions p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .vocabulary-list {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .vocabulary-list h3 {
+            color: #ff6b35;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .vocab-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .vocab-item:hover {
+            background: #ffe6cc;
+            border-color: #ff6b35;
+        }
+        
+        .vocab-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        .vocab-item input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        .vocab-item label {
+            flex: 1;
+            cursor: pointer;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .emoji {
+            font-size: 1.3em;
+            margin-right: 8px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff6b35, #ff8c42);
+            width: 0%;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .answers-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            border-top: 2px solid #ff6b35;
+        }
+        
+        .answers-section h3 {
+            color: #ff6b35;
+            margin-bottom: 15px;
+        }
+        
+        .answer-key {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .answer-item {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #ff6b35;
+        }
+        
+        .answer-item strong {
+            color: #ff6b35;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎃 Halloween Hidden Pictures 🎃</h1>
+        <p class="subtitle">¡Encuentra los 10 objetos escondidos!</p>
+        
+        <div class="instructions">
+            <h3>📋 Instructions / Instrucciones:</h3>
+            <p>Find the 10 hidden Halloween objects in the picture. Check them off the list as you find them. / Encuentra los 10 objetos de Halloween escondidos en la imagen. Márcalos en la lista conforme los encuentres.</p>
+        </div>
+        
+        <div class="content">
+            <!-- Main Image -->
+            <div class="main-image">
+                <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background - Night Sky -->
+                    <rect width="500" height="600" fill="#1a1a3e"/>
+                    
+                    <!-- Moon -->
+                    <circle cx="450" cy="80" r="50" fill="#f0e68c"/>
+                    <circle cx="440" cy="70" r="50" fill="#1a1a3e" opacity="0.3"/>
+                    
+                    <!-- Stars -->
+                    <circle cx="100" cy="50" r="2" fill="white"/>
+                    <circle cx="150" cy="30" r="2" fill="white"/>
+                    <circle cx="200" cy="60" r="2" fill="white"/>
+                    <circle cx="300" cy="40" r="2" fill="white"/>
+                    <circle cx="350" cy="100" r="2" fill="white"/>
+                    
+                    <!-- Haunted House -->
+                    <rect x="150" y="250" width="200" height="200" fill="#8b4513"/>
+                    <polygon points="150,250 250,150 350,250" fill="#654321"/>
+                    
+                    <!-- Door -->
+                    <rect x="230" y="350" width="40" height="100" fill="#3d2817"/>
+                    <circle cx="267" cy="400" r="3" fill="#ffd700"/>
+                    
+                    <!-- Windows -->
+                    <rect x="180" y="280" width="30" height="30" fill="#ff8c00"/>
+                    <line x1="195" y1="280" x2="195" y2="310" stroke="#3d2817" stroke-width="1"/>
+                    <line x1="180" y1="295" x2="210" y2="295" stroke="#3d2817" stroke-width="1"/>
+                    
+                    <rect x="290" y="280" width="30" height="30" fill="#ff8c00"/>
+                    <line x1="305" y1="280" x2="305" y2="310" stroke="#3d2817" stroke-width="1"/>
+                    <line x1="290" y1="295" x2="320" y2="295" stroke="#3d2817" stroke-width="1"/>
+                    
+                    <!-- Roof Details - Hidden Bat -->
+                    <g id="bat1">
+                        <ellipse cx="250" cy="160" rx="8" ry="6" fill="#1a1a1a"/>
+                        <path d="M 242 158 Q 238 155 235 158 Q 238 160 242 160" fill="#1a1a1a"/>
+                        <path d="M 258 158 Q 262 155 265 158 Q 262 160 258 160" fill="#1a1a1a"/>
+                    </g>
+                    
+                    <!-- Tree -->
+                    <rect x="70" y="380" width="20" height="80" fill="#654321"/>
+                    <circle cx="80" cy="360" r="40" fill="#228b22"/>
+                    
+                    <!-- Hidden Spider Web in tree -->
+                    <g id="web1">
+                        <line x1="50" y1="340" x2="110" y2="340" stroke="#cccccc" stroke-width="1"/>
+                        <line x1="50" y1="340" x2="80" y2="380" stroke="#cccccc" stroke-width="1"/>
+                        <line x1="110" y1="340" x2="80" y2="380" stroke="#cccccc" stroke-width="1"/>
+                        <circle cx="80" cy="360" r="2" fill="#000"/>
+                    </g>
+                    
+                    <!-- Tombstones -->
+                    <g id="tombstone1">
+                        <rect x="20" y="470" width="25" height="50" rx="5" fill="#808080"/>
+                        <path d="M 20 470 Q 32.5 450 45 470" fill="#808080"/>
+                        <line x1="32.5" y1="475" x2="32.5" y2="510" stroke="#333" stroke-width="1"/>
+                    </g>
+                    
+                    <g id="tombstone2">
+                        <rect x="380" y="480" width="25" height="50" rx="5" fill="#808080"/>
+                        <path d="M 380 480 Q 392.5 460 405 480" fill="#808080"/>
+                    </g>
+                    
+                    <!-- Pumpkin Patch (Hidden Pumpkins) -->
+                    <circle cx="120" cy="530" r="18" fill="#ff8c00"/>
+                    <line x1="129" y1="512" x2="135" y2="500" stroke="#228b22" stroke-width="2"/>
+                    
+                    <circle cx="170" cy="545" r="15" fill="#ff8c00"/>
+                    <line x1="177" y1="530" x2="183" y2="520" stroke="#228b22" stroke-width="2"/>
+                    
+                    <circle cx="320" cy="540" r="12" fill="#ff8c00"/>
+                    <line x1="326" y1="528" x2="331" y2="518" stroke="#228b22" stroke-width="2"/>
+                    
+                    <!-- Ghost -->
+                    <g id="ghost1">
+                        <ellipse cx="400" cy="280" rx="25" ry="35" fill="white"/>
+                        <circle cx="390" cy="270" r="5" fill="black"/>
+                        <circle cx="410" cy="270" r="5" fill="black"/>
+                        <path d="M 385 320 L 385 335 M 400 320 L 400 335 M 415 320 L 415 335" stroke="white" stroke-width="2"/>
+                    </g>
+                    
+                    <!-- Witch Hat (Hidden) -->
+                    <g id="witchhat1">
+                        <rect x="310" y="220" width="40" height="8" fill="#1a1a1a"/>
+                        <polygon points="330,220 310,180 350,180" fill="#1a1a1a"/>
+                        <circle cx="330" cy="225" r="3" fill="#ffd700"/>
+                    </g>
+                    
+                    <!-- Black Cat -->
+                    <g id="cat1">
+                        <ellipse cx="420" cy="450" rx="20" ry="15" fill="black"/>
+                        <circle cx="430" cy="445" r="8" fill="black"/>
+                        <circle cx="435" cy="443" r="2" fill="#ffd700"/>
+                        <polygon points="435,440 438,435 436,438" fill="black"/>
+                        <polygon points="440,440 444,435 441,438" fill="black"/>
+                        <line x1="450" y1="450" x2="470" y2="450" stroke="black" stroke-width="2"/>
+                    </g>
+                    
+                    <!-- Skeleton Bone (Hidden) -->
+                    <g id="bone1">
+                        <circle cx="60" cy="280" r="6" fill="#f5f5dc"/>
+                        <rect x="66" y="277" width="25" height="6" fill="#f5f5dc"/>
+                        <circle cx="97" cy="280" r="6" fill="#f5f5dc"/>
+                    </g>
+                    
+                    <!-- Candle -->
+                    <g id="candle1">
+                        <rect x="250" y="520" width="12" height="35" fill="#8b7355"/>
+                        <polygon points="256,520 252,510 260,510" fill="#ffff00"/>
+                        <path d="M 254 512 Q 253 508 256 505 Q 259 508 258 512" fill="#ff6347" opacity="0.6"/>
+                    </g>
+                    
+                    <!-- Spiderweb Lines -->
+                    <g id="web2">
+                        <line x1="0" y1="0" x2="80" y2="100" stroke="#cccccc" stroke-width="1" opacity="0.5"/>
+                        <line x1="0" y1="30" x2="60" y2="80" stroke="#cccccc" stroke-width="1" opacity="0.5"/>
+                    </g>
+                    
+                    <!-- Jack-o-lantern face on house window (hidden) -->
+                    <g id="jackolantern1">
+                        <circle cx="195" cy="295" r="12" fill="#ff8c00"/>
+                        <circle cx="190" cy="292" r="1.5" fill="black"/>
+                        <circle cx="200" cy="292" r="1.5" fill="black"/>
+                        <path d="M 190 297 Q 195 299 200 297" stroke="black" stroke-width="1" fill="none"/>
+                    </g>
+                </svg>
+            </div>
+            
+            <!-- Vocabulary List -->
+            <div>
+                <div class="vocabulary-list">
+                    <h3>🔍 Find these objects:</h3>
+                    
+                    <div class="vocab-item">
+                        <input type="checkbox" id="item1" onchange="updateProgress()">
+                        <label for="item1"><span class="emoji">🦇</span>Bat</label>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <input type="checkbox" id="item2" onchange="updateProgress()">
+                        <label for="item2"><span class="emoji">🕷️</span>Spider Web</label>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <input type="checkbox" id="item3" onchange="updateProgress()">
+                        <label for="item3"><span class="emoji">🪦</span>Tombstone</label>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <input type="checkbox" id="item4" onchange="updateProgress()">
+                        <label for="item4"><span class="emoji">🎃</span>Pumpkin</label>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <input type="checkbox" id="item5" onchange="updateProgress()">
+                        <label for="item5"><span class="emoji">👻</span>Ghost</label>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <input type="checkbox" id="item6" onchange="updateProgress()">
+                        <label for="item6"><span class="emoji">🎩</span>Witch Hat</label>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <input type="checkbox" id="item7" onchange="updateProgress()">
+                        <label for="item7"><span class="emoji">🐈‍⬛</span>Black Cat</label>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <input type="checkbox" id="item8" onchange="updateProgress()">
+                        <label for="item8"><span class="emoji">💀</span>Skeleton Bone</label>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <input type="checkbox" id="item9" onchange="updateProgress()">
+                        <label for="item9"><span class="emoji">🕯️</span>Candle</label>
+                    </div>
+                    
+                    <div class="vocab-item">
+                        <input type="checkbox" id="item10" onchange="updateProgress()">
+                        <label for="item10"><span class="emoji">🏚️</span>Haunted House</label>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress">0%</div>
+                    </div>
+                </div>
+                
+                <div class="answers-section">
+                    <h3>📍 Where to find them (SPOILERS!):</h3>
+                    <div class="answer-key">
+                        <div class="answer-item">
+                            <strong>🦇 Bat:</strong> Top of the house roof
+                        </div>
+                        <div class="answer-item">
+                            <strong>🕷️ Spider Web:</strong> In the tree on the left
+                        </div>
+                        <div class="answer-item">
+                            <strong>🪦 Tombstone:</strong> Bottom left and bottom right
+                        </div>
+                        <div class="answer-item">
+                            <strong>🎃 Pumpkin:</strong> Pumpkin patch (3 of them!)
+                        </div>
+                        <div class="answer-item">
+                            <strong>👻 Ghost:</strong> Right side of the image
+                        </div>
+                        <div class="answer-item">
+                            <strong>🎩 Witch Hat:</strong> Top center area
+                        </div>
+                        <div class="answer-item">
+                            <strong>🐈‍⬛ Black Cat:</strong> Bottom right corner
+                        </div>
+                        <div class="answer-item">
+                            <strong>💀 Skeleton Bone:</strong> Left side of image
+                        </div>
+                        <div class="answer-item">
+                            <strong>🕯️ Candle:</strong> Bottom center
+                        </div>
+                        <div class="answer-item">
+                            <strong>🏚️ Haunted House:</strong> Center of the image
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.vocab-item input[type="checkbox"]');
+            const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const total = checkboxes.length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            const progressFill = document.getElementById('progress');
+            progressFill.style.width = percentage + '%';
+            progressFill.textContent = percentage + '%';
+            
+            if (percentage === 100) {
+                progressFill.style.background = 'linear-gradient(90deg, #28a745, #20c997)';
+                alert('🎉 ¡Congratulations! / ¡Felicidades! 🎉\nYou found all the Halloween objects!');
+            }
+        }
+    </script>
+</body>
+</html>
